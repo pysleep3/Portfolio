@@ -4,12 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sleep Py Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="logo">Sleep Py</div>
-    <ul class="nav-links">
+
+    <!-- Mobile menu toggle -->
+    <button id="nav-toggle" class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+    </button>
+
+    <ul id="primary-navigation" class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#resume">Resume</a></li>
@@ -17,42 +25,91 @@
     </ul>
   </nav>
 
-  <section id="about" class="section">
-    <h1>About Me</h1>
-    <p>A builder of games, tools, and curious digital contraptions. Exploring automation, AI, and playful worlds.</p>
-  </section>
+  <main>
+    <section id="about" class="section about-section">
+      <h1>About Me</h1>
+      <div class="about-content">
+        <div class="about-image-wrap">
+          <!-- Default project image stored in repo -->
+          <img id="about-image" class="about-image" src="assets/images/profile.svg" alt="Profile image">
+          <label class="file-label">
+            <input id="about-image-input" type="file" accept="image/*" class="file-input">
+            Change image
+          </label>
+        </div>
+        <div class="about-text">
+          <p>A builder of games, tools, and curious digital contraptions. Exploring automation, AI, and playful worlds.</p>
+        </div>
+      </div>
+    </section>
 
-  <section id="projects" class="section">
-    <h1>Projects</h1>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Halloween Runner</h3>
-        <p>A spooky endless runner crafted with Godot.</p>
-      </div>
-      <div class="project-card">
-        <h3>Zombie Exterminator</h3>
-        <p>A survival game with pictures-to-story cutscenes.</p>
-      </div>
-      <div class="project-card">
-        <h3>Honor of the Knight</h3>
-        <p>Lightweight medieval adventure built for mobile.</p>
-      </div>
-      <div class="project-card">
-        <h3>2D to 3D AI Tool</h3>
-        <p>A web-based model converter under development.</p>
-      </div>
-    </div>
-  </section>
+    <section id="projects" class="section">
+      <h1>Projects</h1>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Halloween Runner</h3>
+          <p>A spooky endless runner crafted with Godot.</p>
+          <video class="project-video" controls preload="metadata" poster="assets/images/video-poster.svg">
+            <source src="assets/videos/halloween-runner.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <label class="file-label small">
+            <input class="project-video-input" type="file" accept="video/*">
+            Upload Video
+          </label>
+        </div>
 
-  <section id="resume" class="section">
-    <h1>Resume</h1>
-    <p>You can paste your resume content here or link a PDF.</p>
-  </section>
+        <div class="project-card">
+          <h3>Zombie Exterminator</h3>
+          <p>A survival game with pictures-to-story cutscenes.</p>
+          <video class="project-video" controls preload="metadata" poster="assets/images/video-poster.svg">
+            <source src="assets/videos/zombie-exterminator.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <label class="file-label small">
+            <input class="project-video-input" type="file" accept="video/*">
+            Upload Video
+          </label>
+        </div>
 
-  <section id="contact" class="section">
-    <h1>Contact</h1>
-    <p>Email: <a href="mailto:sleep.py@example.com">sleep.py@example.com</a></p>
-  </section>
+        <div class="project-card">
+          <h3>Honor of the Knight</h3>
+          <p>Lightweight medieval adventure built for mobile.</p>
+          <video class="project-video" controls preload="metadata" poster="assets/images/video-poster.svg">
+            <source src="assets/videos/honor-of-the-knight.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <label class="file-label small">
+            <input class="project-video-input" type="file" accept="video/*">
+            Upload Video
+          </label>
+        </div>
+
+        <div class="project-card">
+          <h3>2D to 3D AI Tool</h3>
+          <p>A web-based model converter under development.</p>
+          <video class="project-video" controls preload="metadata" poster="assets/images/video-poster.svg">
+            <source src="assets/videos/2d-to-3d-ai-tool.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <label class="file-label small">
+            <input class="project-video-input" type="file" accept="video/*">
+            Upload Video
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="section">
+      <h1>Resume</h1>
+      <p>You can paste your resume content here or link a PDF.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h1>Contact</h1>
+      <p>Email: <a href="mailto:sleep.py@example.com">sleep.py@example.com</a></p>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
