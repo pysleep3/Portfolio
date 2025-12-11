@@ -30,35 +30,3 @@ if (toggle && links) {
     }
   });
 }
-
-// About image upload preview
-const aboutInput = document.getElementById('about-image-input');
-const aboutImage = document.getElementById('about-image');
-
-if (aboutInput && aboutImage) {
-  aboutInput.addEventListener('change', (e) => {
-    const file = e.target.files && e.target.files[0];
-    if (!file) return;
-    const url = URL.createObjectURL(file);
-    aboutImage.src = url;
-    // revoke object URL later to free memory
-    aboutImage.onload = () => URL.revokeObjectURL(url);
-  });
-}
-
-// Project video upload previews
-document.querySelectorAll('.project-video-input').forEach((input, idx) => {
-  input.addEventListener('change', (e) => {
-    const file = e.target.files && e.target.files[0];
-    if (!file) return;
-    // Find the nearest video element in the same project-card
-    const card = input.closest('.project-card');
-    const video = card ? card.querySelector('.project-video') : null;
-    if (!video) return;
-    const url = URL.createObjectURL(file);
-    video.src = url;
-    video.load();
-    // revoke later when video metadata loaded to free memory
-    video.onloadeddata = () => URL.revokeObjectURL(url);
-  });
-});
