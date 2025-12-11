@@ -141,20 +141,6 @@ body{
   max-height:340px;
 }
 
-/* file input styling */
-.file-label{
-  display:inline-flex;
-  align-items:center;
-  gap:0.5rem;
-  cursor:pointer;
-  color:var(--muted);
-  font-size:0.9rem;
-}
-.file-label.small{ font-size:0.85rem; }
-.file-input, .project-video-input{
-  display:none;
-}
-
 /* Contact/resume tweaks */
 #contact a{ color:var(--accent); text-decoration:none }
 #contact a:hover{ text-decoration:underline }
