@@ -4,7 +4,7 @@ const input = document.getElementById("input");
 const sendBtn = document.getElementById("send");
 const clearBtn = document.getElementById("clear");
 
-const API_URL = "/api/chat"; // Calls backend function on Vercel
+const API_URL = "/api_chat/api/chat"; // Calls backend function on Vercel
 
 sendBtn.addEventListener("click", sendMessage);
 input.addEventListener("keypress", e => { if (e.key === "Enter") sendMessage(); });
