@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         "Authorization": `Bearer ${process.env.OPENROUTER_KEY}`,
       },
       body: JSON.stringify({
-        model: "deepseek-r1-0528:free",
+        model: "deepseek/deepseek-r1-0528:free",
         messages: [{ role: "user", content: message }],
       }),
     });
