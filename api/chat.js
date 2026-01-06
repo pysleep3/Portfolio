@@ -19,7 +19,14 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: "deepseek/deepseek-r1-0528:free",
-        messages: [{ role: "user", content: message }],
+        messages: [{
+    role: "system",
+    content: "Reply short, simple, clean. No emojis. No markdown. Max 3 sentences."
+  },
+  {
+    role: "user",
+    content: message
+  }],
       }),
     });
 
