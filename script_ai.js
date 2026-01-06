@@ -49,6 +49,17 @@ function appendMessage(sender, text) {
   chatDiv.scrollTop = chatDiv.scrollHeight;
 }
 
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+  document.body.classList.toggle("dark");
+
+  themeToggle.textContent =
+    document.body.classList.contains("dark") ? "🌙" : "☀️";
+});
+
+
 function showTyping() {
   const div = document.createElement("div");
   div.className = "message bot";
