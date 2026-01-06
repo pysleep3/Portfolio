@@ -4,45 +4,171 @@
   <meta charset="UTF-8">
   <title>AI Chat Demo</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; }
-    #chat { border: 1px solid #ccc; height: 300px; overflow-y: scroll; padding: 10px; margin-bottom: 10px; }
-    .message { margin: 5px 0; }
-    .user { color: blue; }
-    .bot { color: green; }
+  :root {
+    --bg-dark: #0f1117;
+    --panel-dark: #161a23;
+    --text-dark: #e6e6e6;
+    --bot-dark: #1f2430;
+    --user-dark: #2563eb;
 
-    .typing {
-      display: inline-flex;
-      gap: 4px;
-    }
-    
-    .typing span {
-      width: 6px;
-      height: 6px;
-      background: #999;
-      border-radius: 50%;
-      animation: blink 1.4s infinite both;
-    }
-    
-    .typing span:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-    .typing span:nth-child(3) {
-      animation-delay: 0.4s;
-    }
-    
-    @keyframes blink {
-      0% { opacity: 0.2; }
-      20% { opacity: 1; }
-      100% { opacity: 0.2; }
-    }
-  </style>
+    --bg-light: #f4f6f8;
+    --panel-light: #ffffff;
+    --text-light: #222;
+    --bot-light: #ececec;
+    --user-light: #dbeafe;
+  }
+
+  body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
+
+  body.light {
+    background: var(--bg-light);
+    color: var(--text-light);
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  #chat {
+    width: 100%;
+    max-width: 520px;
+    height: 420px;
+    padding: 16px;
+    overflow-y: auto;
+    border-radius: 14px;
+    background: var(--panel-dark);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    margin-bottom: 12px;
+  }
+
+  body.light #chat {
+    background: var(--panel-light);
+  }
+
+  .message {
+    padding: 10px 14px;
+    margin: 8px 0;
+    border-radius: 12px;
+    max-width: 80%;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .user {
+    margin-left: auto;
+    background: var(--user-dark);
+    color: white;
+  }
+
+  .bot {
+    background: var(--bot-dark);
+  }
+
+  body.light .user {
+    background: var(--user-light);
+    color: #1e3a8a;
+  }
+
+  body.light .bot {
+    background: var(--bot-light);
+  }
+
+  .input-area {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    gap: 8px;
+  }
+
+  input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #222;
+    color: white;
+  }
+
+  body.light input {
+    background: #f1f1f1;
+    color: #222;
+  }
+
+  button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+  }
+
+  button:hover {
+    opacity: 0.85;
+  }
+
+  #themeToggle {
+    background: #444;
+  }
+
+  body.light #themeToggle {
+    background: #ddd;
+    color: #333;
+  }
+
+  .typing {
+    display: inline-flex;
+    gap: 4px;
+  }
+  
+  .typing span {
+    width: 6px;
+    height: 6px;
+    background: #999;
+    border-radius: 50%;
+    animation: blink 1.4s infinite both;
+  }
+  
+  .typing span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .typing span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes blink {
+    0% { opacity: 0.2; }
+    20% { opacity: 1; }
+    100% { opacity: 0.2; }
+  }
+
+</style>
+
+
 </head>
-<body>
+<body class="dark">
   <h1>AI Chat Demo</h1>
   <div id="chat"></div>
+  <div class="input-area">
   <input id="input" type="text" placeholder="Type a message..." />
   <button id="send">Send</button>
   <button id="clear">Clear Chat</button>
+  <button id="themeToggle">🌙</button>
+  </div>
 
   <script src="script_ai.js"></script>
 </body>
