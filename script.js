@@ -55,5 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
         toggle.focus();
       }
     });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!links.contains(e.target) && e.target !== toggle) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  
+    // Close menu when scrolling
+    document.addEventListener('scroll', () => {
+      if (links.classList.contains('open')) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 });
