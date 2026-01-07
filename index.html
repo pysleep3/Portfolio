@@ -85,56 +85,54 @@
         </div>
 
       </div>
-    </section>
 
     <section id="resume" class="section">
   <h1>Resume</h1>
 
   <div class="pdf-container">
-    <iframe
-      src="resume_wafi.pdf#toolbar=0"
-      loading="lazy">
-    </iframe>
+    <embed
+      src="resume_wafi.pdf"
+      type="application/pdf">
   </div>
 
-  <div class="resume-actions">
-    <a href="resume_wafi.pdf" target="_blank" class="download-btn">
+  <div style="margin-top:16px;">
+    <a href="resume_wafi.pdf" class="download-btn">
       Download Resume (PDF)
     </a>
   </div>
 </section>
 
-
 <style>
-  /* Desktop */
+ /* Desktop */
+.pdf-container {
+  width: 77%;
+  max-width: 1000px;
+  height: 1132px;
+  margin: auto;
+}
+
+.pdf-container embed {
+  width: 100%;
+  height: 100%;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
   .pdf-container {
-    width: 77%;
-    max-width: 1000px;
-    height: 1132px;
-    margin: auto;
+    width: 90%;
+    height: 900px;
   }
+}
 
-  .pdf-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+/* Mobile */
+@media (max-width: 768px) {
+  .pdf-container {
+    width: 95%;
+    height: 80vh;
   }
+}
 
-  /* Tablet */
-  @media (max-width: 1024px) {
-    .pdf-container {
-      width: 90%;
-      height: 900px;
-    }
-  }
 
-  /* Mobile */
-  @media (max-width: 768px) {
-    .pdf-container {
-      width: 95%;
-      height: 80vh;
-    }
-  }
 </style>
 
 
