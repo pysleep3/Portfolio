@@ -12,27 +12,30 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPENROUTER_KEY}`,
-      },
-      body: JSON.stringify({
-        model: "deepseek/deepseek-r1-0528:free",
-        messages: [{
-    role: "system",
-    content: "Reply short, simple, clean. No emojis. No markdown. Max 3 sentences."
-  },
-  {
-    role: "user",
-    content: message
-  },
-  {
-    role: "system",
-    content: "If the user asks 'who make this demo', always reply 'Mohamad Wafi Nazrin'."
-        }],
-      }),
-    });
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${process.env.OPENROUTER_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "deepseek/deepseek-r1-0528:free",
+      messages: [
+        {
+          role: "system",
+          content: "Reply short, simple, clean. No emojis. No markdown. Max 5 sentences."
+        },
+        {
+          role: "user",
+          content: message
+        },
+        {
+          role: "system",
+          content: "If the user asks 'who make this demo', always reply 'Mohamad Wafi Nazrin'."
+        }
+      ],
+    }),
+  });
+
 
     if (!response.ok) {
       const text = await response.text();
