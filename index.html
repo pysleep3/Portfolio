@@ -10,7 +10,7 @@
   <span class="loader"></span>
   <div id="content">
   <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="logo">Portfolio</div>
+    <div class="logo">Sleep Py</div>
 
     <!-- Mobile menu toggle -->
     <button id="nav-toggle" class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,8 +52,11 @@
       <h1>Projects</h1>
       <div class="project-grid">
         <div class="project-card">
-          <h3>Halloween Runner</h3>
-          <p>A spooky endless runner crafted with Godot.</p>
+          <h3>AI chat</h3>
+          <p>A lightweight AI chat, powered by the Deepseek model for fast, intelligent, and interactive conversations. Perfect for experimenting with AI-driven chat experiences.<div class="contact-card"><a href="index_ai.html" target="_blank">
+	  <img src="chatbot.png"/>
+	 </a></div>
+	  </p>
           <video class="project-video" controls preload="metadata" poster="assets/images/video-poster.svg">
             <source src="assets/videos/halloween-runner.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -61,8 +64,11 @@
         </div>
 
         <div class="project-card">
-          <h3>Zombie Exterminator</h3>
-          <p>A survival game with pictures-to-story cutscenes.</p>
+          <h3>Face recognition</h3>
+          <p>A simple face recognition tool that can detect faces in real-time and capture pictures manually.<div class="contact-card"><a href="https://github.com/pysleep3/Face-Recognition/tree/main" target="_blank">
+	  <img src="github.png"/>
+	 </a></div>
+	  </p>
           <video class="project-video" controls preload="metadata" poster="assets/images/video-poster.svg">
             <source src="assets/videos/zombie-exterminator.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -70,33 +76,61 @@
         </div>
 
         <div class="project-card">
-          <h3>Honor of the Knight</h3>
-          <p>Lightweight medieval adventure built for mobile.</p>
+          <h3>Dino Max</h3>
+          <p>A fun and adventurous mobile game where kids can explore a world of dinosaurs, collect treasures, and enjoy exciting prehistoric challenges.</p>
           <video class="project-video" controls preload="metadata" poster="assets/images/video-poster.svg">
             <source src="assets/videos/honor-of-the-knight.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
 
-        <div class="project-card">
-          <h3>2D to 3D AI Tool</h3>
-          <p>A web-based model converter under development.</p>
-          <video class="project-video" controls preload="metadata" poster="assets/images/video-poster.svg">
-            <source src="assets/videos/2d-to-3d-ai-tool.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
       </div>
     </section>
 
     <section id="resume" class="section">
-      <h1>Resume</h1>
-      <embed src="resume_wafi.pdf#toolbar=0" type="application/pdf" width="77%" height="1132px" />
-      <div style="margin-top:16px;">
-      <a href="resume_wafi.pdf" download class="download-btn"> 
+  <h1>Resume</h1>
+  <div class="pdf-container">
+    <embed src="resume_wafi.pdf#toolbar=0" type="application/pdf" />
+  </div>
+  <div style="margin-top:16px;">
+    <a href="resume_wafi.pdf" download class="download-btn"> 
       Download Resume (PDF)
-      </a> 
-    </section>
+    </a> 
+  </div>
+</section>
+
+<style>
+  /* PDF container default (desktop) */
+  .pdf-container {
+    width: 77%;           /* slightly narrower on desktop */
+    max-width: 1000px;    /* optional: prevents super wide screens */
+    height: 1132px;       /* original desktop height */
+    margin: auto;
+  }
+
+  .pdf-container embed {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Tablets */
+  @media (max-width: 1024px) {
+    .pdf-container {
+      width: 90%;        /* a bit wider for smaller desktops/tablets */
+      height: 900px;     /* slightly shorter height */
+    }
+  }
+
+  /* Mobile phones */
+  @media (max-width: 768px) {
+    .pdf-container {
+      width: 100%;       /* full width on mobile */
+      height: 80vh;      /* adjust height to viewport */
+    }
+  }
+</style>
+
+
 
     <section id="contact" class="section">
       <h1>Contact</h1>
