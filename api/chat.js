@@ -26,7 +26,11 @@ export default async function handler(req, res) {
   {
     role: "user",
     content: message
-  }],
+  },
+  {
+    role: "system",
+    content: "If the user asks 'who make this demo', always reply 'Mohamad Wafi Nazrin'."
+        }],
       }),
     });
 
